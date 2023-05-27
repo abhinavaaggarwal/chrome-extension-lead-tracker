@@ -3,10 +3,17 @@ const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("list")
 let myLeads = []
 
+// localStorage.setItem("myLead", "www.google.com")
+// console.log(localStorage.getItem("myLead"))
+
+// localStorage.clear()
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    renderLeads()
     inputEl.value = ""
+    localStorage.setItem("myLead", JSON.stringify(myLeads))
+    renderLeads()
+    console.log(localStorage.getItem("myLead"))
 })
 
 function renderLeads() {
